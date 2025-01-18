@@ -1,0 +1,21 @@
+{
+    "name": "CipherX/Handler",
+    "description": "CipherX adalah sebuah package atau library PHP yang berfokus pada pengolahan data menggunakan enkripsi dan dekripsi dengan algoritma yang kuat dan modern.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CipherX\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Helmi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-openssl": "*"
+    }
+}
