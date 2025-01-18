@@ -16,7 +16,10 @@ Instalasi
 
 Untuk menginstal CipherX melalui Composer, jalankan perintah berikut:
 
+```bash
 composer require cipherx/handler
+```
+
 Pastikan Anda telah menginstal Composer di proyek Anda. Jika belum, Anda bisa mengikuti panduan instalasi Composer di situs resmi Composer.
 
 ## Cara Penggunaan
