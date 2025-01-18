@@ -1,5 +1,5 @@
 {
-    "name": "CipherX/Handler",
+    "name": "cipher-x/handler",
     "description": "CipherX adalah sebuah package atau library PHP yang berfokus pada pengolahan data menggunakan enkripsi dan dekripsi dengan algoritma yang kuat dan modern.",
     "type": "library",
     "license": "MIT",
@@ -13,7 +13,17 @@
             "name": "Helmi"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0.0",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "^11.5.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-openssl": "*"
