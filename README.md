@@ -6,13 +6,14 @@ Dengan menggunakan CipherX, Anda dapat mengenkripsi dan mendekripsi data dengan 
 
 ## Fitur Utama
 
-Enkripsi Data: Mengubah data plaintext menjadi ciphertext menggunakan algoritma AES-256-CBC.
-Dekripsi Data: Mengubah ciphertext kembali menjadi plaintext.
-Pengelolaan Kunci Enkripsi: Menyediakan fungsi untuk menghasilkan atau menyediakan kunci enkripsi yang aman dan mengelolanya dengan baik.
-Keamanan Tinggi: Menggunakan salt dan IV (Initialization Vector) untuk memastikan enkripsi yang aman.
-Sederhana dan Mudah Digunakan: API yang intuitif memungkinkan enkripsi dan dekripsi hanya dengan beberapa baris kode.
-Portabilitas: Dapat digunakan di berbagai aplikasi PHP tanpa bergantung pada konfigurasi server tertentu.
-Instalasi
+- Enkripsi Data: Mengubah data plaintext menjadi ciphertext menggunakan algoritma AES-256-CBC.
+- Dekripsi Data: Mengubah ciphertext kembali menjadi plaintext.
+- Pengelolaan Kunci Enkripsi: Menyediakan fungsi untuk menghasilkan atau menyediakan kunci enkripsi yang aman dan mengelolanya dengan baik.
+- Keamanan Tinggi: Menggunakan salt dan IV (Initialization Vector) untuk memastikan enkripsi yang aman.
+- Sederhana dan Mudah Digunakan: API yang intuitif memungkinkan enkripsi dan dekripsi hanya dengan beberapa baris kode.
+- Portabilitas: Dapat digunakan di berbagai aplikasi PHP tanpa bergantung pada konfigurasi server tertentu.
+
+## Instalasi
 
 Untuk menginstal CipherX melalui Composer, jalankan perintah berikut:
 
@@ -27,7 +28,7 @@ Pastikan Anda telah menginstal Composer di proyek Anda. Jika belum, Anda bisa me
 1. Enkripsi Data
 Untuk mengenkripsi data, Anda cukup memanggil metode encrypt() dari kelas CipherX\Handler.
 ```bash
-<?php
+
 require 'vendor/autoload.php';
 
 use CipherX\Handler;
@@ -43,18 +44,18 @@ $handler = new Handler($key);
 $encryptedData = $handler->encrypt($data);
 
 echo "Encrypted Data: " . $encryptedData;
-?>
+
 ```
 2. Dekripsi Data
 Untuk mendekripsi data yang sudah dienkripsi, Anda bisa menggunakan metode decrypt().
 
 ```bash
-<?php
+
 // Dekripsi data yang telah dienkripsi sebelumnya
 $decryptedData = $handler->decrypt($encryptedData);
 
 echo "Decrypted Data: " . $decryptedData;
-?>
+
 ```
 3. Menangani Kunci dan IV
 Kelas ini secara otomatis menangani pengelolaan salt dan Initialization Vector (IV) untuk setiap proses enkripsi dan dekripsi. Anda hanya perlu menyediakan kunci enkripsi yang aman dan kelas ini akan mengurus sisanya.
@@ -62,14 +63,14 @@ Kelas ini secara otomatis menangani pengelolaan salt dan Initialization Vector (
 4. Menggunakan Salt dan IV
 Salt dan IV digunakan untuk memastikan setiap data terenkripsi memiliki pola yang berbeda, bahkan jika data yang sama dienkripsi dengan kunci yang sama. Ini membantu mencegah serangan berbasis pola yang mudah dikenali.
 ```bash
-<?php
+
 // Salt dan IV dihasilkan secara otomatis oleh Handler
 $encryptedData = $handler->encrypt($data);
 $decryptedData = $handler->decrypt($encryptedData);
 
 echo "Encrypted Data with Salt and IV: " . $encryptedData;
 echo "\nDecrypted Data: " . $decryptedData;
-?>
+
 ```
 
 ## Keamanan
@@ -88,7 +89,7 @@ $key = bin2hex(random_bytes(32)); // Kunci 256-bit
 Mengamankan Data Pengguna
 Misalnya, Anda ingin mengamankan data sensitif pengguna seperti password sebelum disimpan di database.
 ```bash
-<?php
+
 require 'vendor/autoload.php';
 
 use CipherX\Handler;
@@ -109,14 +110,14 @@ echo "Encrypted Password: " . $encryptedPassword;
 // Dekripsi password saat login
 $decryptedPassword = $handler->decrypt($encryptedPassword);
 echo "\nDecrypted Password: " . $decryptedPassword;
-?>
+
 ```
 
 ## Enkripsi File
 Anda juga dapat menggunakan CipherX untuk mengenkripsi file secara aman.
 
 ```bash
-<?php
+
 require 'vendor/autoload.php';
 
 use CipherX\Handler;
@@ -136,5 +137,5 @@ file_put_contents('path/to/your/encrypted-file.txt', $encryptedFileContent);
 // Dekripsi file ketika dibutuhkan
 $decryptedFileContent = $handler->decrypt($encryptedFileContent);
 echo "Decrypted File Content: " . $decryptedFileContent;
-?>
+
 ```
